@@ -13,7 +13,7 @@ namespace IISPoolController
         private readonly string _sPoolName;
         private readonly string _sUser;
 
-        public AppPoolController(string sHost, string sUser, string sPoolName, string sPassword, int iInterval)
+        public AppPoolController(string sHost, string sUser, string sPoolName, string sPassword, int iInterval=30)
         {
             _iInterval = iInterval;
             _sHost = sHost;
