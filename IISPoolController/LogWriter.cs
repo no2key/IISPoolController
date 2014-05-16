@@ -7,7 +7,7 @@ namespace IISPoolController
     {
         public static void WriteLog(DateTime time, string message)
         {
-            var name = "Log_" + DateTime.Today.ToString().Substring(0, 10) + ".txt";
+            string name = "Log_" + DateTime.Today.ToString().Substring(0, 10) + ".txt";
             using (var writer = new StreamWriter(name, true))
             {
                 writer.WriteLine(time + "     " + message);

@@ -6,8 +6,8 @@ namespace IISPoolController
 {
     internal class AppPoolController
     {
-        private readonly ConnectionOptions _options;
         private readonly int _iInterval;
+        private readonly ConnectionOptions _options;
         private readonly string _sHost;
         private readonly string _sPassword;
         private readonly string _sPoolName;
@@ -34,7 +34,6 @@ namespace IISPoolController
             bool bSuccess = false;
             _options.Authentication = AuthenticationLevel.PacketPrivacy;
             var scope = new ManagementScope(@"\\" + _sHost + "\\root\\MicrosoftIISv2", _options);
-
             try
             {
                 scope.Connect();
