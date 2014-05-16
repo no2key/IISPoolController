@@ -13,19 +13,13 @@ namespace IISPoolController
         private readonly string _sPoolName;
         private readonly string _sUser;
 
-        public AppPoolController(string sHost, string sUser, string sPoolName, string sPassword, int iInterval)
+        public AppPoolController(string sHost, string sUser, string sPoolName, string sPassword, int iInterval=30)
         {
             _iInterval = iInterval;
             _sHost = sHost;
             _sPassword = sPassword;
             _sPoolName = sPoolName;
             _sUser = sUser;
-//            sHost = ISPoolController.Default.host;
-//            sUser = ISPoolController.Default.user;
-//            sPassword = ISPoolController.Default.password;
-//            sPoolName = ISPoolController.Default.pool;
-//            iInterval = ISPoolController.Default.interval;
-//            ISPoolController.Default.Save();
             _options = new ConnectionOptions {Username = sUser, Password = sPassword};
         }
 
@@ -78,7 +72,7 @@ namespace IISPoolController
             return bSuccess;
         }
 
-        private static void HostAccessExceptionHandler(Exception exception)
+        public static void HostAccessExceptionHandler(Exception exception)
         {
             switch (exception.HResult)
             {

@@ -1,4 +1,4 @@
-﻿using System.Threading;
+using System.Threading;
 
 namespace IISPoolController
 {
@@ -30,7 +30,7 @@ namespace IISPoolController
             while (_bIsDone == false)
             {
                 _bIsDone = ap.AppPoolAction(actionCmdLineString);
-                Thread.Sleep(1000*intervalCmdLineInt);
+                Thread.Sleep(1000 * intervalCmdLineInt);
             }
         }
     }
