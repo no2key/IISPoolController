@@ -7,7 +7,7 @@ Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 2
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
+		SccTeamFoundationServer = http://tfs:8080/tfs
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = IISPoolController\\IISPoolController.csproj
 		SccProjectName1 = IISPoolController
@@ -15,11 +15,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		DLL|Any CPU = DLL|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1204A3BD-9A3D-4EB0-9B3C-9CEFC2B964BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1204A3BD-9A3D-4EB0-9B3C-9CEFC2B964BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1204A3BD-9A3D-4EB0-9B3C-9CEFC2B964BF}.DLL|Any CPU.ActiveCfg = DLL|Any CPU
+		{1204A3BD-9A3D-4EB0-9B3C-9CEFC2B964BF}.DLL|Any CPU.Build.0 = DLL|Any CPU
 		{1204A3BD-9A3D-4EB0-9B3C-9CEFC2B964BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1204A3BD-9A3D-4EB0-9B3C-9CEFC2B964BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

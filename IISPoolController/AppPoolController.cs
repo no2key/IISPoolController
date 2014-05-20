@@ -6,16 +6,14 @@ namespace IISPoolController
 {
     internal class AppPoolController
     {
-        private readonly int _iInterval;
         private readonly ConnectionOptions _options;
         private readonly string _sHost;
         private readonly string _sPassword;
         private readonly string _sPoolName;
         private readonly string _sUser;
 
-        public AppPoolController(string sHost, string sUser, string sPoolName, string sPassword, int iInterval=30)
+        public AppPoolController(string sHost, string sUser, string sPoolName, string sPassword)
         {
-            _iInterval = iInterval;
             _sHost = sHost;
             _sPassword = sPassword;
             _sPoolName = sPoolName;

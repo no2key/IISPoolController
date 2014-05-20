@@ -1,9 +1,10 @@
 ﻿using System;
 using Microsoft.Build.Utilities;
+using System.Threading;
 
 namespace IISPoolController
 {
-    internal class TaskExec : Task
+    public class TaskExec : Task
     {
         private bool isDone;
         public string Command { get; set; }
@@ -11,14 +12,29 @@ namespace IISPoolController
         public string PoolName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        
+        public int Interval { get; set; }
+
+        private const int MaxTryCount = 10;
+
+        public TaskExec()
+        {
+            Interval = 10; //sec
+        }
+
         public override bool Execute()
         {
             try
             {
-                var ap = new AppPoolController(Hostname, UserName, PoolName, Password, 30);
-                ap.AppPoolAction(Command);
-                isDone = true;
+                var ap = new AppPoolController(Hostname, UserName, PoolName, Password);
+                isDone = false;
+                var tryCount = 0;
+
+                while (isDone == false && tryCount++ <= MaxTryCount)
+                {
+                    isDone = ap.AppPoolAction(Command);
+                
+                    Thread.Sleep(1000 * Interval);
+                }
             }
             catch (Exception ex)
             {

@@ -25,7 +25,7 @@ namespace IISPoolController
             cl.Parse(args);
 
             var ap = new AppPoolController(hostCmdLineString, userCmdLineString, appPoolNameCmdLineString,
-                passwordCmdLineString, intervalCmdLineInt);
+                passwordCmdLineString);
 
             while (_bIsDone == false)
             {
